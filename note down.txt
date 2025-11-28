@@ -1,0 +1,276 @@
+// A React component is a JavaScript function that you can sprinkle with markup
+
+
+    <img 
+      src="https://i.imgur.com/MK3eW3As.jpg"
+      alt="ketherine Johnson"
+    />
+    
+// Above tag is self closing tag in css but in jsx it is compeleted like that <.../>
+function App(){}
+export default App();
+// this is exporting function insted of component
+export default App;
+// this is exporting component 
+// ---------two export types 
+@@@default
+export default App;
+import App from "./App.jsx"
+@@@normal
+export App;
+import {App} from "./App.jsx"
+-----------------
+
+
+ root component file  is where you UI components placed ,ex. App.jsx
+ entry points file where the root file is gonna render with render code , ex. main.jsx
+
+ JSX is a syntax extension for JavaScript that lets you write HTML-like markup inside a JavaScript file.
+
+ #### Rule of JSX
+
+ 1. to return multiple element from a component ,wrap them with  a single parent tag
+
+ like : <div></div>
+
+ if you don't wonna use div use
+empty tag also called as /*fragment*/
+ <></>
+
+ 2. you should close all tags 
+
+
+ #1.  <li>
+  => <li></li>
+
+#2. if element is self closing use 
+like this 
+    <img>
+ =>  <img />
+
+ 3.  Use camelCase all most of the things! except component name
+
+
+
+ #### JSX with Curly Braces
+@passing string with quotes
+ex.
+  function App() {
+
+  const avatar = 'https://i.imgur.com/7vQD0fPs.jpg';
+  const description = "Gregorio Y. Zara";
+
+  return (
+    <>
+      <img className='avatar' src={avatar} alt={description} />
+      <h1> this is image of {description}</h1>
+
+
+  );
+}
+You could use a value from JavaScript by replacing " and " with { and }
+
+
+you can also use function inside {}
+ex.⤵️⤵️
+  const today = new Date();
+
+  function formatDate(date) {
+    return new Intl.DateTimeFormat(
+      'en-US',
+      { weekday: 'long' }
+    ).format(date);
+  }
+
+  export default function TodoList() {
+    return (
+      <h1>To Do List for {formatDate(today)}</h1>
+    );
+  }
+
+  Where to use curly braces 
+You can only use curly braces in two ways inside JSX:
+
+if you wonna  concate string so you can concate 
+src = {baseUrl+imageId+'.jpg'}
+
+
+
+As text directly inside a JSX tag: <h1>{name}'s To Do List</h1> works, but <{tag}>Gregorio Y. Zara's To Do List</{tag}> will not.
+As attributes immediately following the = sign: src={avatar} will read the avatar variable, but src="{avatar}" will pass the string "{avatar}".
+
+@ Using “double curlies”: CSS and other objects in JSX
+person = {{name:"erwin shrodinger",occupation:"scientist"}}
+this passes whole object 
+
+#### Props are the information that you pass to a JSX tag. For example, className, src, alt, width, and height are some of the props you can pass to an <img>
+
+in html it called attributes
+in jsx it called props
+
+@passing prop to components
+<img
+  src="link"
+  alt="description"
+  width="100px"
+
+  />
+in this given tag src alt and width are props
+
+you can pass props tho your component
+function avatar({link,alt,description}){
+  return(
+    <>
+      <img
+        src={link}
+         alt={description}
+         width={100px}
+       />
+    </>
+  )
+}
+
+function App(){
+  <>
+    <avatar 
+      link=alkdhadkjadfkladhf
+      description=this is description
+      width =100
+    />
+  </>
+}
+use curly braces incomponent parameter to take input as prop.
+App(para)<--reads function's parameter
+App({prop,prop2})<-- reads component's prop 
+
+@like function's parameter you can define the default prop 
+value
+
+App({prop1='link',prop2=26}){}
+
+here's props default value 
+
+@Forwarding props with the JSX spread syntax
+some parent component uses child components 
+so this syntax is used to give child component all props
+
+@Passing JSX as children 
+
+<div><img ....../></div>
+
+you can also nest your component
+
+####Conditional Rendering
+@Conditional returning jsx
+if(packed){
+  return(
+    <>
+     <h1>product ✅</h1> 
+    </>
+  )
+}
+return(
+    <>
+     <h1>product [not packed]</h1> 
+    </>
+  )
+
+  or you can use ternary operator
+  return(
+    {packed?<><h1>product ✅</h1> </> :<><h1>product</h1> </>}
+  )
+
+@Logical AND operator (&&) 
+A JavaScript && expression returns the value of its right side (in our case, the checkmark) if the left side (our condition) is true. But if the condition is false, the whole expression becomes false. React considers false as a “hole” in the JSX tree, just like null or undefined, and doesn’t render anything in its place.
+
+The AND operator has a higher precedence than the OR operator, meaning the && operator is executed before the || operator (see operator precedence).
+
+function Item({name,isPacked}){
+  return(
+    <>
+    <li className='item'>
+      {name}{isPacked&&"👍"}
+    </li>
+    </>
+  )
+}
+function App(){
+  return (
+    <>
+    <h1>silly's space Advanture</h1>
+    
+    <Item name="spacesuit" isPacked={false}/>
+    <Item name="waterSupply" isPacked/><---- isPacked does exist = true 
+    <Item name="food" /><----isPacked doesn't exist = false
+    </>
+  )
+}
+
+
+### passing child componet into parent 
+use children prop it is given below 
+---------------------------------------------
+function Card({ children }) {
+  return (
+    <div className="card">
+      <div className="card-content">
+        {children}
+      </div>
+    </div>
+  );
+}
+
+export default function Profile() {
+  return (
+    <div>
+      <Card>
+        <h1>Photo</h1>
+        <img
+          className="avatar"
+          src="https://i.imgur.com/OKS67lhm.jpg"
+          alt="Aklilu Lemma"
+          width={100}
+          height={100}
+        />
+      </Card>
+      <Card>
+        <h1>About</h1>
+        <p>Aklilu Lemma was a distinguished Ethiopian scientist who discovered a natural treatment to schistosomiasis.</p>
+      </Card>
+    </div>
+  );
+}
+--------------------------------------------------
+
+or pass components as prop 
+
+function Card({ content }) {
+  return (
+    <div className="card">
+      {content}
+    </div>
+  );
+}
+ 
+function App(){
+<Card content={<Profile />} />
+<Card content={<About />} />
+}
+
+or pass the components
+function Card ({component})
+{
+  return (
+    <div className='card'>
+      <component />
+    </div>
+  )
+}
+| Technique                                       | Best when                                               |
+| ----------------------------------------------- | ------------------------------------------------------- |
+| `children`                                      | Wrapping content inside component                       |
+| Component as JSX prop (`content={<Profile />}`) | You need multiple content areas                         |
+| Component function prop (`Component={Profile}`) | You need to control when component renders or rerenders |
+
+
+React treats components like values.

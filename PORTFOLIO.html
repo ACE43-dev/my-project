@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+</head>
+<style>
+    * {
+        margin: 0px;
+    }
+
+    nav {
+        display: flex;
+        position: sticky;
+
+        /* margin-top:5px; */
+        padding: 20px;
+    }
+
+    nav h2 {
+        padding-right: 40%;
+    }
+
+    nav a {
+        padding-right: 20px;
+    }
+
+    .intro {
+        display: flex;
+        background-color: cadetblue;
+    }
+
+    .bluetext {
+        color: blue;
+    }
+
+    .intro div div {
+        display: flex;
+    }
+
+    .aboutme {
+        display: flex;
+    }
+
+    .df {
+        display: flex;
+        
+    }
+    .dfcol{
+        display: flex;
+        flex-direction: column;
+    }
+</style>
+
+<body>
+
+    <nav>
+        <h2>
+            Himayu Prajapati
+        </h2>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#skill">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">contact</a>
+    </nav>
+    <div class="intro">
+        <div>
+            <h1>Hii, I am<div class="bluetext"> Himayu Prajapati</div>
+            </h1>
+            <h2>Frontend Web Devloper</h2>
+            <p>I create beautiful, responsive websites with clean code and mordern design</p>
+            <div>
+                <button>View My Work</button>
+                <button>Contact me</button>
+            </div>
+        </div>
+        <div>
+            <img src="./src/assets/react.svg">
+        </div>
+    </div>
+    <div>
+        <h2>
+            About Me
+        </h2>
+        <div class="aboutme">
+            <div class="aminfo"><img src="./src/assets/react.svg"></div>
+            <div>
+                <p>I am passinate Frontend devloperwith a focus on creating friendly, accessible websites .I enjoy
+                    complex
+                    problems into simple ,beatiful design</p>
+
+                <p>When I am not coding. You can find me exploring new technologies, contributing to open source
+                    projects,
+                    or hiking in mountains</p>
+
+                <p> Email: himayu@gmail.com
+                    Location: Ahemdabad ,Gujarat
+                    Education: B.tech 1st
+                </p>
+            </div>
+
+        </div>
+    </div>
+    <div>
+        <div>
+            <h1>My skills</h1>
+
+        </div>
+        <div class="frontendSkill">
+            <h3>HTML5</h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+            <h3>CSS3</h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+            <h3>JavaScript </h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+        </div>
+        <div class="otherSkill">
+            <h3>Git</h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+            <h3>Responsive Design</h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+            <h3>UI/UX Design </h3>
+            <div class="100percent">
+                <div class="xpercent"></div>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>My Projects</h2>
+        </div>
+        <div>
+            <div>
+                <img src="./src/assets/react.svg">
+                <h4>E-commerce Website</h4>
+                <p>A fully responsive e-commerce site with product filtering and cart functionality </p>
+                <p>Html</p>
+            </div>
+            <div>
+                <img src="./src/assets/react.svg">
+                <h4>Weather API</h4>
+                <p>A Weather application that display current condition and forecast using Weather API </p>
+            </div>
+            <div>
+                <img src="./src/assets/react.svg">
+                <h4>Task Manager</h4>
+                <p>A drag and drop task mangement appliciton with local storage functionality </p>
+            </div>
+        </div>
+    </div>
+    <div>
+        <div>
+            <h2>Get In Touch</h2>
+        </div>
+        <div class="df">
+            <div>
+                <h3>Let's Connect</h3>
+            
+                <p>
+                    I'm currently available for freelance work or full-time position .Feel free to reach out if you have
+                    project in mind or just want to Connect
+                </p>
+                <div>
+                    <div class="df"><img src="./src/assets/react.svg">
+                    
+                    <p>himayu@gmail.com</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="df"><img src="./src/assets/react.svg">
+                        <p>+91 9879038635</p>
+                    </div>
+                </div>
+                <div>
+                    <div class="df"><img src="./src/assets/react.svg">
+                        <p>Ahemdabad, Gujarat</p>
+                    </div>
+                </div>
+                <div>
+                    <img src="./src/assets/react.svg">
+                    <img src="./src/assets/react.svg">
+                    <img src="./src/assets/react.svg">
+                    <img src="./src/assets/react.svg">
+                </div>
+            </div>
+            <form class="dfcol">
+                <input type="text" placeholder="Enter your name" name="name">
+                <input type="email" placeholder="Enter your Email" name="email">
+                <input type="text" placeholder="Enter your Subject " name="subject">
+                <textarea name="message" placehoder="Message"></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+<script>
+
+</script>
+
+</html>
