@@ -1,0 +1,87 @@
+[1mdiff --git a/note down.txt b/note down.txt[m
+[1mindex c5661ae..6df893d 100644[m
+[1m--- a/note down.txt[m	
+[1m+++ b/note down.txt[m	
+[36m@@ -48,7 +48,7 @@[m [mlike this[m
+     <img>[m
+  =>  <img />[m
+ [m
+[31m- 3.  Use camelCase all most of the things! except component name[m
+[32m+[m[32m 3.  Use camelCase all most of the things! except component name which start with capital[m
+ [m
+ [m
+ [m
+[36m@@ -181,7 +181,10 @@[m [mreturn([m
+   )[m
+ [m
+ @Logical AND operator (&&) [m
+[31m-A JavaScript && expression returns the value of its right side (in our case, the checkmark) if the left side (our condition) is true. But if the condition is false, the whole expression becomes false. React considers false as a “hole” in the JSX tree, just like null or undefined, and doesn’t render anything in its place.[m
+[32m+[m[32mA JavaScript && expression returns the value of its right side (in our case, the checkmark)[m[41m [m
+[32m+[m[32mif the left side (our condition) is true. But if the condition is false, the whole expression[m[41m [m
+[32m+[m[32mbecomes false. React considers false as a “hole” in the JSX tree, just like null or undefined,[m[41m [m
+[32m+[m[32mand doesn’t render anything in its place.[m
+ [m
+ The AND operator has a higher precedence than the OR operator, meaning the && operator is executed before the || operator (see operator precedence).[m
+ [m
+[36m@@ -190,6 +193,14 @@[m [mfunction Item({name,isPacked}){[m
+     <>[m
+     <li className='item'>[m
+       {name}{isPacked&&"👍"}[m
+[32m+[m[32m      //in this && is not strictly boolean operator[m
+[32m+[m[32m      //if left side is true then returns rigth side value[m
+[32m+[m[32m      //if left side is false then return left side value[m
+[32m+[m[32m      //left side value is false[m[41m [m
+[32m+[m[32m      ⤵️⤵️⤵️⤵️[m
+[32m+[m[32m      //REACT IGNORES FALSE VALUES SHOWING NOTHING[m
+[32m+[m[32m      👆👆👆👆👆👆👆👆👆👆👆[m
+[32m+[m[32m      // if you want visible result also with false use ternary operator[m
+     </li>[m
+     </>[m
+   )[m
+[36m@@ -257,7 +268,7 @@[m [mfunction App(){[m
+ <Card content={<About />} />[m
+ }[m
+ [m
+[31m-or pass the components[m
+[32m+[m[32mor pass the components as component[m
+ function Card ({component})[m
+ {[m
+   return ([m
+[36m@@ -273,4 +284,34 @@[m [mfunction Card ({component})[m
+ | Component function prop (`Component={Profile}`) | You need to control when component renders or rerenders |[m
+ [m
+ [m
+[31m-React treats components like values.[m
+\ No newline at end of file[m
+[32m+[m[32mReact treats components like values.[m
+[32m+[m
+[32m+[m[32mArrays aren't primitive in java .it can contain multiple datatype .[m
+[32m+[m
+[32m+[m[32musing .map or .filter method to manipulate Arrays[m
+[32m+[m
+[32m+[m[32mconst people = [[m
+[32m+[m[32m        'Creola Katherine Johnson: mathematician',[m
+[32m+[m[32m        'Mario José Molina-Pasquel Henríquez: chemist',[m
+[32m+[m[32m        'Mohammad Abdus Salam: physicist',[m
+[32m+[m[32m        'Percy Lavon Julian: chemist',[m
+[32m+[m[32m        'Subrahmanyan Chandrasekhar: astrophysicist'[m
+[32m+[m[32m    ];[m
+[32m+[m[32mfunction App() {[m
+[32m+[m[41m    [m
+[32m+[m[32m    const list=people.map(n=><li>{n}</li>)[m
+[32m+[m[32m    return([m
+[32m+[m[32m        <>[m
+[32m+[m[32m            <ul>{list}</ul>[m
+[32m+[m[32m        </>[m
+[32m+[m[32m    )[m
+[32m+[m[32m    or[m[41m [m
+[32m+[m[32m    return([m
+[32m+[m[32m        <>[m
+[32m+[m[32m            <ul>{people.map(n=><li>{n}</li>)} </ul>[m
+[32m+[m[32m        </>[m
+[32m+[m[32m    )[m
+[32m+[m[32m}[m
+[32m+[m
+[32m+[m
+[32m+[m[32mthis[m
+\ No newline at end of file[m

@@ -48,7 +48,7 @@ like this
     <img>
  =>  <img />
 
- 3.  Use camelCase all most of the things! except component name
+ 3.  Use camelCase all most of the things! except component name which start with capital
 
 
 
@@ -181,7 +181,10 @@ return(
   )
 
 @Logical AND operator (&&) 
-A JavaScript && expression returns the value of its right side (in our case, the checkmark) if the left side (our condition) is true. But if the condition is false, the whole expression becomes false. React considers false as a “hole” in the JSX tree, just like null or undefined, and doesn’t render anything in its place.
+A JavaScript && expression returns the value of its right side (in our case, the checkmark) 
+if the left side (our condition) is true. But if the condition is false, the whole expression 
+becomes false. React considers false as a “hole” in the JSX tree, just like null or undefined, 
+and doesn’t render anything in its place.
 
 The AND operator has a higher precedence than the OR operator, meaning the && operator is executed before the || operator (see operator precedence).
 
@@ -190,6 +193,14 @@ function Item({name,isPacked}){
     <>
     <li className='item'>
       {name}{isPacked&&"👍"}
+      //in this && is not strictly boolean operator
+      //if left side is true then returns rigth side value
+      //if left side is false then return left side value
+      //left side value is false 
+      ⤵️⤵️⤵️⤵️
+      //REACT IGNORES FALSE VALUES SHOWING NOTHING
+      👆👆👆👆👆👆👆👆👆👆👆
+      // if you want visible result also with false use ternary operator
     </li>
     </>
   )
@@ -257,7 +268,7 @@ function App(){
 <Card content={<About />} />
 }
 
-or pass the components
+or pass the components as component
 function Card ({component})
 {
   return (
@@ -274,3 +285,33 @@ function Card ({component})
 
 
 React treats components like values.
+
+Arrays aren't primitive in java .it can contain multiple datatype .
+
+using .map or .filter method to manipulate Arrays
+
+const people = [
+        'Creola Katherine Johnson: mathematician',
+        'Mario José Molina-Pasquel Henríquez: chemist',
+        'Mohammad Abdus Salam: physicist',
+        'Percy Lavon Julian: chemist',
+        'Subrahmanyan Chandrasekhar: astrophysicist'
+    ];
+function App() {
+    
+    const list=people.map(n=><li>{n}</li>)
+    return(
+        <>
+            <ul>{list}</ul>
+        </>
+    )
+    or 
+    return(
+        <>
+            <ul>{people.map(n=><li>{n}</li>)} </ul>
+        </>
+    )
+}
+
+
+this
