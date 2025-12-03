@@ -20,7 +20,7 @@
     }
 
     nav h2 {
-        padding-right: 40%;
+        padding-right: 70%;
     }
 
     nav a {
@@ -30,14 +30,19 @@
     .intro {
         display: flex;
         background-color: cadetblue;
+        padding: 40px;
     }
 
     .bluetext {
         color: blue;
     }
+    .intro{
+        padding:5%;
+    }
 
     .intro div div {
         display: flex;
+        
     }
 
     .aboutme {
@@ -52,13 +57,27 @@
         display: flex;
         flex-direction: column;
     }
+    .view-my-work{
+        padding: 5%;
+        border: 2px solid blue;
+        background: lightblue;
+        border-radius: 15px;
+        margin:5%
+    }
+    .contact-me-1{
+        padding: 5%;
+        border: 2px solid blue;
+        background: rgb(15, 2, 255);
+        border-radius: 15px;
+        margin:5%
+    }
 </style>
 
 <body>
 
     <nav>
         <h2>
-            Himayu Prajapati
+            <div class="bluetext">Himayu</div> Prajapati
         </h2>
         <a href="#home">Home</a>
         <a href="#about">About</a>
@@ -73,8 +92,8 @@
             <h2>Frontend Web Devloper</h2>
             <p>I create beautiful, responsive websites with clean code and mordern design</p>
             <div>
-                <button>View My Work</button>
-                <button>Contact me</button>
+                <button class="view-my-work">View My Work</button>
+                <button class="contact-me-1">Contact me</button>
             </div>
         </div>
         <div>

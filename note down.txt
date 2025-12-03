@@ -299,7 +299,7 @@ const people = [
     ];
 function App() {
     
-    const list=people.map(n=><li>{n}</li>)
+    const list=people.map(n=><li>{n}</li>)///this technique also called implicit return
     return(
         <>
             <ul>{list}</ul>
@@ -314,4 +314,52 @@ function App() {
 }
 
 
-this
+key are unique numbers.
+Key's Rule
+1.key must be unique
+2.key myst not change.don't generate them while Rendering
+
+why to use key 
+File names in a folder and JSX keys in an array serve a similar purpose. They let us uniquely identify an item between its siblings. A well-chosen key provides more information than the position within the array. Even if the position changes due to reordering, the key lets React identify the item throughout its lifetime.
+
+Note that your components won’t receive key as a prop. It’s only used as a hint by React itself. If your component needs an ID, you have to pass it as a separate prop: <Profile key={id} userId={id} />.
+
+🔥 KEY IDEA
+
+map() is NOT responsible for displaying elements.
+
+👉 map() creates an array of JSX elements
+👉 React displays them
+
+
+Purity: Components as formulas 
+In computer science (and especially the world of functional programming), a pure function is a function with the following characteristics:
+
+It minds its own business. It does not change any objects or variables that existed before it was called.
+Same inputs, same output. Given the same inputs, a pure function should always return the same result.
+
+In React, side effects usually belong inside event handlers. Event handlers are functions that React runs when you perform some action—for example, when you click a button. Even though event handlers are defined inside your component, they don’t run during rendering! So event handlers don’t need to be pure.
+
+If you’ve exhausted all other options and can’t find the right event handler for your side effect, you can still attach it to your returned JSX with a useEffect call in your component. This tells React to execute it later, after rendering, when side effects are allowed. However, this approach should be your last resort.
+
+| ❌ BAD                            | Why                  |
+| --------------------------------- | --------------------- |
+| Updating state during render      | Causes infinite loop  |
+| Calling API inside render         | Side effect           |
+| Reading/writing localStorage      | Mutates external data |
+| Modifying props                   | Breaks React rules    |
+| Randomizing values on each render | Makes UI inconsistent |
+
+
+✨ Simple rule to remember
+
+Rendering must be pure. Effects must be in useEffect.
+
+Any code that:
+
+Changes something outside component
+
+Reads something that can change over time
+
+Triggers async actions
+→ belongs in effects (useEffect), NOT inside render
